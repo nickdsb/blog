@@ -1,8 +1,6 @@
 package com.fufu.blog.controller;
 
 
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
@@ -11,9 +9,19 @@ import org.springframework.web.servlet.ModelAndView;
 public class MainController {
 
 
-    @RequestMapping("/a")
-    String firstIndex(){
-        return "freemarkerPages/index.ftl";
+    @RequestMapping("")
+    ModelAndView firstIndex(){
+        return new ModelAndView("pages/index");
     }
 
+
+    @RequestMapping("login")
+    ModelAndView login(){
+        return new ModelAndView("pages/login");
+    }
+
+    @RequestMapping("register")
+    ModelAndView register(){
+        return new ModelAndView("pages/register");
+    }
 }
