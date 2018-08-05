@@ -26,4 +26,10 @@ public class MainController {
     ModelAndView register(){
         return new ModelAndView("pages/register");
     }
+
+
+    @RequestMapping("blog")
+    ModelAndView blog(){
+        return new ModelAndView("pages/blog");
+    }
 }

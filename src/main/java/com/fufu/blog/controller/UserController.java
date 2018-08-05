@@ -17,9 +17,9 @@ public class UserController {
     UserService service;
 
     @RequestMapping("addUser")
-    ModelAndView addUser(String id,String name,String password,String verificationCode,ModelMap map){
+    ModelAndView addUser(String id,String name,String password1,String verificationCode,ModelMap map){
         if(verificationCode.equals("gg")){
-            UserBean user=new UserBean("gg","name","password");
+            UserBean user=new UserBean(id,name,password1);
             service.addUser(user);
             map=ModelAndViewUtil.getMessageMap(map,"success","msg","注册成功.......","/");
             return new ModelAndView("common/message");
