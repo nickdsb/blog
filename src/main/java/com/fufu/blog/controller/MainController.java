@@ -1,6 +1,8 @@
 package com.fufu.blog.controller;
 
 
+import com.fufu.blog.entity.UserBean;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
@@ -15,12 +17,12 @@ public class MainController {
     }
 
 
-    @RequestMapping("login")
+    @RequestMapping("loginPage")
     ModelAndView login(){
         return new ModelAndView("pages/login");
     }
 
-    @RequestMapping("register")
+    @RequestMapping("registerPage")
     ModelAndView register(){
         return new ModelAndView("pages/register");
     }

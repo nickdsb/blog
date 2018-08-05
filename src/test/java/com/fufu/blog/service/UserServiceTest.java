@@ -19,9 +19,11 @@ public class UserServiceTest {
 
     @Test
     public void Test(){
+        String insertID="nick";
+        String insertPassword="ffffff";
 
-        UserBean user=new UserBean("gdddddgg","name","password");
-        service.addUser(user);
-
+        UserBean user=new UserBean(insertID,"name",insertPassword);
+       //service.addUser(user);
+        System.out.println(service.loginJudge(insertID,insertPassword));
     }
 }

@@ -1,11 +1,7 @@
 package com.fufu.blog.mapper;
 
 import com.fufu.blog.entity.UserBean;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -15,8 +11,8 @@ public interface UserMapper {
     @Select("select * from user where id = #{id}")
     public UserBean selectUserById(String id);
 
-    @Select("select * from user where name = #{name}")
-    public List<UserBean> selectUserByName(String name);
+    @Select("select * from user where id = #{id} and password = #{password}")
+    public UserBean getUserBean(@Param("id")String id, @Param("password")String password);
 
     @Insert("insert into user(id,name,password) values (#{id},#{name},#{password})")
     public void addUser(UserBean user);

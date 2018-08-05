@@ -14,4 +14,16 @@ public class UserService {
     public void addUser(UserBean user){
         mapper.addUser(user);
     }
+
+    public boolean loginJudge(String id,String password){
+        UserBean user=mapper.getUserBean(id,password);
+        if(user!=null){
+            return true;
+        }
+        return false;
+    }
+
+    public UserBean getUser(String id){
+       return mapper.selectUserById(id);
+    }
 }

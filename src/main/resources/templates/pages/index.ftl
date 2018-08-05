@@ -150,8 +150,8 @@
                 <a class="item">三二</a>
                 <a class="item">四一</a>
                 <div class="right item">
-                    <button class="ui inverted button" onclick="window.location='/login';">Log in</button>
-                    <a class="ui inverted button">Sign Up</a>
+                    <button class="ui inverted button" onclick="window.location='/loginPage';">Log in</button>
+                    <button class="ui inverted button" onclick="window.location='/registerPage';">Sign Up</button>
                 </div>
             </div>
         </div>
@@ -222,11 +222,6 @@
 
             })
     ;
-</script>
-<script>
-    $('.goto_login').click({
-
-    })
 </script>
 </body>
 
