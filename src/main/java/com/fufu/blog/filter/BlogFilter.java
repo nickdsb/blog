@@ -11,7 +11,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 
-@Component
+//@Component
 public class BlogFilter implements Filter {
     @Autowired
     protected SystemService service;
@@ -31,7 +31,14 @@ public class BlogFilter implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpSession session = ((HttpServletRequest) servletRequest).getSession();
-        /*String url=((HttpServletRequest) servletRequest).getRequestURI();
+        if(session.getAttribute("view_count")==null){
+            blogFilter.service.incCount();
+            session.setAttribute("view_count",blogFilter.service.getCount());
+            System.out.println("view++");
+        }
+
+
+        String url=((HttpServletRequest) servletRequest).getRequestURI();
         if(url.equals("/")||
                 url.indexOf(".js")>0||
                 url.indexOf(".css")>0||
@@ -43,12 +50,6 @@ public class BlogFilter implements Filter {
                 ){
             filterChain.doFilter(servletRequest,servletResponse);
             return;
-        }*/
-
-        if(session.getAttribute("view_count")==null){
-            blogFilter.service.incCount();
-            session.setAttribute("view_count",blogFilter.service.getCount());
-            System.out.println("view++");
         }
         System.out.println("filter working");
         filterChain.doFilter(servletRequest,servletResponse);

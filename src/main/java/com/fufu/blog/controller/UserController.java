@@ -17,7 +17,7 @@ public class UserController {
     UserService service;
 
     @RequestMapping("addUser")
-    ModelAndView addUser(String id,String name,String password1,String verificationCode,ModelMap map){
+    public ModelAndView addUser(String id,String name,String password1,String verificationCode,ModelMap map){
         if(verificationCode.equals("gg")){
             UserBean user=new UserBean(id,name,password1);
             service.addUser(user);
@@ -30,7 +30,7 @@ public class UserController {
     }
 
     @RequestMapping("login")
-    ModelAndView addUser(String id,String password,String verificationCode,ModelMap map){
+   public  ModelAndView addUser(String id,String password,String verificationCode,ModelMap map){
         if(verificationCode.equals("gg")){
             if(service.loginJudge(id,password)){
                 map=ModelAndViewUtil.getMessageMap(map,"success","msg","登录成功.......","/");

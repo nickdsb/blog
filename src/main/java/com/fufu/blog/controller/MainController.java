@@ -11,25 +11,25 @@ import org.springframework.web.servlet.ModelAndView;
 public class MainController {
 
 
-    @RequestMapping("")
-    ModelAndView firstIndex(){
+    @RequestMapping("main")
+    public ModelAndView firstIndex(){
         return new ModelAndView("pages/index");
     }
 
 
     @RequestMapping("loginPage")
-    ModelAndView login(){
+    public ModelAndView login(){
         return new ModelAndView("pages/login");
     }
 
     @RequestMapping("registerPage")
-    ModelAndView register(){
+    public ModelAndView register(){
         return new ModelAndView("pages/register");
     }
 
 
     @RequestMapping("blog")
-    ModelAndView blog(){
+    public ModelAndView blog(){
         return new ModelAndView("pages/blog");
     }
 }
