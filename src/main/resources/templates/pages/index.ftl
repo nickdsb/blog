@@ -193,7 +193,10 @@
                     <div class="ui statistics">
                         <div class="violet statistic">
                             <div class="value">
-                                #{view_count}
+                                <#if Session.view_count?exists>
+                                    #{Session.view_count }
+                                </#if>
+
                             </div>
                             <div class="ui small pink label ">views</div>
                         </div>

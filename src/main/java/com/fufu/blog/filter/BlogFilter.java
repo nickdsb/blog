@@ -31,6 +31,20 @@ public class BlogFilter implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpSession session = ((HttpServletRequest) servletRequest).getSession();
+        /*String url=((HttpServletRequest) servletRequest).getRequestURI();
+        if(url.equals("/")||
+                url.indexOf(".js")>0||
+                url.indexOf(".css")>0||
+                url.indexOf(".ftl")>0 ||
+                url.indexOf(".woff")>0||
+                url.indexOf(".ttf")>0||
+                url.indexOf(".wof")>0||
+                url.indexOf(".ico")>0
+                ){
+            filterChain.doFilter(servletRequest,servletResponse);
+            return;
+        }*/
+
         if(session.getAttribute("view_count")==null){
             blogFilter.service.incCount();
             session.setAttribute("view_count",blogFilter.service.getCount());
