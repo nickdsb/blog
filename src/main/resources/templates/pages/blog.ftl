@@ -16,6 +16,11 @@
     <p><br></p>
 </div>
 
+<div class="ui fluid large teal submit button" id="get">Login</div>
+
+
+
+<#include "../common/script.ftl">
 <!-- Include the Quill library -->
 
 <#include "../common/QuillScript.ftl">
@@ -47,12 +52,15 @@
         },
         theme: 'snow'
     });
+    $("#get").click(function () {
+        var json=JSON.stringify(quill.getContents());
+        var obj=JSON.parse(json);
+        console.log(obj)
+    })
 
 
-    alert(quill.getText(0))
 </script>
 
-<#include "../common/script.ftl">
 </body>
 
 </html>

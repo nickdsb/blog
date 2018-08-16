@@ -158,10 +158,10 @@
 
         <div class="ui text container">
             <h1 class="ui inverted header">
-                敬请期待
+                有意思的东西
             </h1>
             <h2>Do whatever you want when you want to.</h2>
-            <div class="ui huge primary button">Get Started <i class="right arrow icon"></i></div>
+            <div class="ui huge primary button">But nothing now <i class="right arrow icon"></i></div>
         </div>
 
     </div>
@@ -188,41 +188,49 @@
                     </div>
                 </div>
                 <div class="seven wide column">
-                    <h4 class="ui inverted header">Footer Header</h4>
-                    <p>Extra space for a call to action inside the footer that could help re-engage users.</p>
+                    <h4 class="ui inverted header">想要</h4>
+                    <p>用一生书写的网站.</p>
+                    <div class="ui statistics">
+                        <div class="violet statistic">
+                            <div class="value">
+                                #{view_count}
+                            </div>
+                            <div class="ui small pink label ">views</div>
+                        </div>
+                        <div class="ui statistics">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
 
 
 <#include "../common/script.ftl">
-<script>
-    $(document)
-            .ready(function () {
+        <script>
+            $(document)
+                    .ready(function () {
 
-                // fix menu when passed
-                $('.masthead')
-                        .visibility({
-                            once: false,
-                            onBottomPassed: function () {
-                                $('.fixed.menu').transition('fade in');
-                            },
-                            onBottomPassedReverse: function () {
-                                $('.fixed.menu').transition('fade out');
-                            }
-                        })
-                ;
+                        // fix menu when passed
+                        $('.masthead')
+                                .visibility({
+                                    once: false,
+                                    onBottomPassed: function () {
+                                        $('.fixed.menu').transition('fade in');
+                                    },
+                                    onBottomPassedReverse: function () {
+                                        $('.fixed.menu').transition('fade out');
+                                    }
+                                })
+                        ;
 
-                // create sidebar and attach to menu open
-                $('.ui.sidebar')
-                        .sidebar('attach events', '.toc.item')
-                ;
+                        // create sidebar and attach to menu open
+                        $('.ui.sidebar')
+                                .sidebar('attach events', '.toc.item')
+                        ;
 
-            })
-    ;
-</script>
+                    })
+            ;
+        </script>
 </body>
 
 </html>
