@@ -30,7 +30,7 @@
                 Register to your account
             </div>
         </h2>
-        <form class="ui large form" action="/addUser">
+        <form class="ui large form" method="post">
             <div class="ui stacked segment">
                 <div class="field">
                     <div class="ui left icon input">
@@ -47,7 +47,7 @@
                 <div class="field">
                     <div class="ui left icon input">
                         <i class="lock icon"></i>
-                        <input  type="password" name="password1" placeholder="密码">
+                        <input  type="password" name="password" placeholder="密码">
                     </div>
                 </div>
                 <div class="field">
