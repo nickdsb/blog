@@ -130,6 +130,13 @@
         </dependency>
         <!--test-->
 
+
+        <!--security-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <!--security-->
     </dependencies>
 
     <build>

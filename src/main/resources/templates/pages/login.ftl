@@ -30,12 +30,12 @@
                 Log-in to your account
             </div>
         </h2>
-        <form class="ui large form"  method="post">
+        <form action="/login" class="ui large form"  method="post">
             <div class="ui stacked segment">
                 <div class="field">
                     <div class="ui left icon input">
                         <i class="user icon"></i>
-                        <input type="text" name="id" placeholder="ID">
+                        <input type="text" name="username" placeholder="ID">
                     </div>
                 </div>
                 <div class="field">
@@ -44,13 +44,11 @@
                         <input type="password" name="password" placeholder="Password">
                     </div>
                 </div>
-                <div class="field">
-                    <div class="ui left icon input">
-                        <i class="lock icon"></i>
-                        <input type="password" name="verificationCode" placeholder="验证码">
-                    </div>
-                </div>
-                <div class="ui fluid large teal submit button">Login</div>
+                <input type="checkbox" id="remember_me" name="remember_me">
+                <label for="remember_me" class="inline">Remember Me</label>
+                <#--csrf-->
+                <#--<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>-->
+                <input type="submit" class="ui fluid large teal submit button" value="Login">
             </div>
 
             <div class="ui error message"></div>

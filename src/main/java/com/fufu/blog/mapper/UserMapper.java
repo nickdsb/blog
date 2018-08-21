@@ -3,8 +3,6 @@ package com.fufu.blog.mapper;
 import com.fufu.blog.entity.UserBean;
 import org.apache.ibatis.annotations.*;
 
-import java.util.List;
-
 @Mapper
 public interface UserMapper {
 
@@ -20,6 +18,6 @@ public interface UserMapper {
     /*@Update("update user set userName=#{userName},userAge=#{userAge},userAddress=#{userAddress} where id=#{id}")
     public void updateUser(UserBean user);*/
 
-    @Delete("delete from user where id=#{id}")
+    @Delete("delete from user where author=#{author}")
     public void deleteUser(String id);
 }

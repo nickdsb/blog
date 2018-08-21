@@ -28,7 +28,6 @@ public class UserController {
     @PostMapping("register")
     public ModelAndView addUser(@Valid UserBean user, Errors errors, String verificationCode, ModelMap map){
         if(errors.hasErrors()){
-            System.out.println("valid");
             map=ModelAndViewUtil.getMessageMap(map,"error","msg","输入有错误.......","/");
             return new ModelAndView("common/message");
         }
@@ -49,7 +48,7 @@ public class UserController {
         return new ModelAndView("pages/login");
     }
     //login后台处理
-    @PostMapping("login")
+   /* @PostMapping("login")
    public  ModelAndView addUser(String id,String password,String verificationCode,ModelMap map){
         if(verificationCode.equals("gg")){
             if(service.loginJudge(id,password)){
@@ -64,6 +63,6 @@ public class UserController {
             return new ModelAndView("common/message");
         }
 
-    }
+    }*/
 
 }

@@ -2,7 +2,6 @@ package test.com.fufu.blog.controller;
 
 import com.fufu.blog.BlogApplication;
 import com.fufu.blog.controller.UserController;
-import com.fufu.blog.entity.UserBean;
 import com.fufu.blog.service.UserService;
 import org.junit.Before;
 import org.junit.Test;
@@ -95,7 +94,15 @@ public class UserControllerTest {
 
     @Test
     public void testCheckValidation() throws Exception {
-        UserBean userBean=new UserBean(null,null,null);
+        String id = "testId" + System.currentTimeMillis();
+        mockMvc.perform(post("/register")
+                .param("id", id)
+                .param("name", "testName")
+                .param("password", "short")
+                .param("password2", "short")
+                .param("verificationCode", "gg"))
+                .andExpect(view().name("common/message"));
+        assertNull(service.getUser(id));
     }
 
 
