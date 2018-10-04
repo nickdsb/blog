@@ -137,6 +137,13 @@
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
         <!--security-->
+
+
+       <!-- <dependency>
+            <groupId>com.caucho</groupId>
+            <artifactId>hessian</artifactId>
+            <version>4.0.38</version>
+        </dependency>-->
     </dependencies>
 
     <build>
